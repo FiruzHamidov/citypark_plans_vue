@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Планировки</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+          name="viewport">
+    <meta content="ie=edge" http-equiv="X-UA-Compatible">
+    <link href="./style.css" rel="stylesheet">
+    <link href="//unpkg.com/viewerjs/dist/viewer.css" rel="stylesheet">
+</head>
+<body>
+<div id="app">
+    <div style="display: flex;">
+        <img id="box" src="./img/general_plans.jpg" style="margin: auto;height: 100vh;" alt="Генеральный план"/>
+        <svg fill="none" height="100%" id="general_plan"
+             style="position: absolute;bottom: 0;left: 0;z-index: 90;height: 100vh;margin: auto;" viewBox="0 0 1342 768"
+             width="100%"
+             xmlns="http://www.w3.org/2000/svg">
+            <rect fill="url(#pattern0)" height="896" width="100%"/>
+            <a class="btn-block" @click="openBlock(block)" v-for="(block, index ) in apartments" :key="index"
+               @mouseover="showBlockInfo(block, true)" @mouseleave="showBlockInfo(null,false)"
+               v-html="block.svgElement"
+            >
+            </a>
+        </svg>
+    </div>
+
+    <div class="blockInfo" ref="blockInfo">
+        <strong>Блок {{ blockInfo.name }}</strong>
+        <div>
+            <p>Этажность: <strong>{{ blockInfo.floorCount }}</strong></p>
+            <p>Площадь: <strong>{{ blockInfo.square }}</strong></p>
+            <p>Количество квартир: <strong>{{ blockInfo.apartmentCount }}</strong></p>
+        </div>
+    </div>
+
+    <div class="block-a_modal" id="block-a_modal" v-if="showApartments">
+        <div class="big-a-block">
+            <span class="close-a" @click="showApartments = false">&times;</span>
+            <h1 align="center">{{ block.name }}</h1>
+            <h1 align="center">Выберите квартиру</h1>
+            <div class="floors">
+                <div class="floor" v-for="(floor, index) in block.floors" :key="index">
+                    {{ floor.name }}
+                    <div class="apartments">
+                        <div class="apartment" v-for="(apartment, index) in floor.apartments" :key="index">
+                            <a href="#" @click="openApartment(apartment, floor)">{{ apartment.roomCount }} квартира </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal" v-if="showApartment">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close" @click="showApartment = false">&times;</span>
+            <div class="plan-popup">
+                <div class="plan-img">
+                    <input checked id="tab1" name="tab" type="radio">
+                    <label for="tab1">Планировка</label>
+                    <input id="tab2" name="tab" type="radio">
+                    <label for="tab2">С мебелью</label>
+                    <div class="line"></div>
+                    <br>
+                    <div class="content-container">
+                        <div class="content" id="c1" v-viewer.static="{inline: true}">
+                            <img alt="" id="img" :src="apartment.plan" width="300px">
+                        </div>
+                        <div class="content" id="c2" v-viewer.static="{inline: true}">
+                            <img alt="" id="img2" :src="apartment.planWithFurniture" width="300px">
+                        </div>
+                    </div>
+                </div>
+                <div class="form">
+                    <p>Блок: <strong id="general_square">{{ block.name }}</strong></p>
+                    <p>Общая площадь: <strong id="general_square">{{ apartment.generalSquare }}</strong></p>
+                    <p>Жилая площадь: <strong id="live_square">{{ apartment.liveSquare }}</strong></p>
+                    <p>Количество комнат: <strong id="room_count">{{ apartment.roomCount }}</strong></p>
+                    <p>Этаж: <strong id="floor">{{ floor.name }}</strong></p>
+                    <p>Статус: <strong>{{ apartment.soldStatus ? 'Продано' : 'Не продано' }}</strong></p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<script src="//unpkg.com/viewerjs/dist/viewer.js"></script>
+<script src="//unpkg.com/v-viewer/dist/v-viewer.js"></script>
+
+<script type="module">
+
+    const {createApp} = Vue
+    import blocksData from './data/apartments.json' assert {type: "json"}
+
+    const app = createApp({
+        data() {
+            return {
+                apartments: blocksData,
+                blockInfo: {
+                    status: false,
+                    name: '',
+                    floorCount: '',
+                    square: '',
+                    apartmentCount: '',
+                },
+                apartment: {
+                    square: '',
+                    plan: '',
+                    planWithFurniture: '',
+                    generalSquare: '',
+                    liveSquare: '',
+                    roomCount: '',
+                    soldStatus: ''
+                },
+                floor: {
+                    name: ''
+                },
+                showApartments: false,
+                showApartment: false,
+                block: [],
+            }
+        },
+        methods: {
+            showBlockInfo(data, status) {
+                let blockInfoRef = this.$refs.blockInfo
+                blockInfoRef.style.left = `${event.clientX + 25}px`;
+                blockInfoRef.style.top = `${event.clientY + 25}px`;
+                status ? blockInfoRef.style.display = 'flex' : blockInfoRef.style.display = 'none'
+                status ? this.blockInfo = data : this.blockInfo = {}
+                this.blockInfo.status = !this.status;
+            },
+            openBlock(block) {
+                this.showApartments = true
+                this.block = block
+            },
+            openApartment(apartment, floor) {
+                this.showApartment = true
+                this.showApartments = false
+
+                this.apartment = apartment
+                this.floor = floor
+
+                console.log('info', apartment, floor)
+
+            }
+        }
+    }).mount('#app')
+
+    app.use(VueViewer.default)
+
+
+
+    const box = document.getElementById("box")
+
+    if (window.innerWidth <= 1024) {
+        setTimeout(() => {
+            document.getElementById("general_plan").style.width = box.offsetWidth + 'px';
+        }, 3000)
+    }
+
+</script>
+
+</body>
+
+
+</html>

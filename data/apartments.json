@@ -1,0 +1,366 @@
+[
+  {
+    "name": "Дриада",
+    "floorCount": "16",
+    "square": "14200м2",
+    "apartmentCount": "130",
+    "svgElement": "<path class=\"block\" d=\"M374 381.175H367.975L251.5 378L249.5 385L244.5 373L264.5 303.5L269 304L270.6 292.511L269.062 290.449L265.475 280.655L283 221L291.377 221.17L290 217L298 191H306.987L308 186.5H299L305.5 160.5H313V154H331.5V156.5H356.738L355 163H370L371.5 156.5L411.5 157.5L410.5 163H419L453.5 317L449.5 335.5L457 360L451.5 386.5H420.5L419.5 394L380.5 393L374 381.175Z\" fill=\"#8763C1\" fill-opacity=\"0.64\" stroke=\"#856DE2\"/>",
+    "floors": [
+      {
+        "name": "1",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      },
+      {
+        "name": "2",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      },
+      {
+        "name": "3",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Арабис",
+    "floorCount": "16",
+    "square": "12900м2",
+    "apartmentCount": "104",
+    "svgElement": "<path class=\"block\" d=\"M419.083 393.614L380.5 393L374.5 381L369.5 380.5L251.326 378L242 411.5H226.5L206.5 480L283 617.5L296.5 618.5L301.5 626L351 628.5L434.5 632L490 633.5L563 636L566 606H571L578.5 537L561.5 399.5L560 397L559.5 393.614L551 393.5V391L509.5 389.5L508.5 397H503L504 389.5L467 388L466 395.5H459.5L461 387.5L420 386L419.083 393.614Z\" fill=\"#9D75DE\" fill-opacity=\"0.44\" stroke=\"#3863FB\"/>",
+    "floors": [
+      {
+        "name": "1",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      },
+      {
+        "name": "2",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Виола",
+    "floorCount": "19",
+    "square": "12300м2",
+    "apartmentCount": "96",
+    "svgElement": "<path class=\"block\" d=\"M747.5 197.5L777 224L685 278.5L684 290.5L680.5 292L680 297L675 300.5L674 487L563.5 371L566.5 367.5V363L560.39 355.441L534.5 154.5L574 134L604.129 159.5L605.5 158.5L604.129 145L632.5 129.5L644.743 139.309L655.157 135.132L696.5 173.5V177.5L726 204.044L735.5 198.301L739.5 202.5L747.5 197.5Z\" fill=\"#5C67C2\" fill-opacity=\"0.49\" stroke=\"#856DE2\"/>",
+    "floors": [
+      {
+        "name": "1",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      },
+      {
+        "name": "2",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Брунера",
+    "floorCount": "19",
+    "square": "11000м2",
+    "apartmentCount": "96",
+    "svgElement": "<path class=\"block\" d=\"M919 367.5L913.5 372L909 367.5L912.5 353.5L897 339.5L869 357L858 347L861.5 327L805.5 274.5L808.759 254.87L806.5 252.5L757 206.977L808 181L808.759 168.455L834.5 153L840 157L845.5 154L850 157L880.5 140.5L891 148L895.196 128.891L914.5 117.5L938.5 135.5L932.462 159.084L933 169.5L943 163.5L965.5 181.5L955.5 219L957.5 221L919 367.5Z\" fill=\"#425B9D\" fill-opacity=\"0.45\" stroke=\"#856DE2\"/>",
+    "floors": [
+      {
+        "name": "1",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      },
+      {
+        "name": "2",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Глория",
+    "floorCount": "19",
+    "square": "13000м2",
+    "apartmentCount": "112",
+    "svgElement": "<path class=\"block\" d=\"M808.5 254L776.182 225L684 279.5L683 291.5L679.5 293L678.632 298.081L674 301.5L673 488L829 653L841 643.5L844.5 648L859.5 636.5L872.695 625.378L895.525 648.868L910.5 636.5L931 621.5L984 480.5L981.5 477L993.5 443.5L909.5 368.5L912 353L897 339.5L869 357L858 347L861.5 326.5L805.24 274.068L808.5 254Z\" fill=\"#4F69C4\" fill-opacity=\"0.53\" stroke=\"#856DE2\"/>",
+    "floors": [
+      {
+        "name": "1",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      },
+      {
+        "name": "2",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      }
+    ]
+  }
+]
