@@ -13,14 +13,14 @@
 <body>
 <div id="app">
     <div style="display: flex;">
-        <img id="box" src="./img/general_plans.jpg" style="margin: auto;height: 100vh;" alt="Генеральный план"/>
+        <img alt="Генеральный план" id="box" src="./img/general_plans.jpg" style="margin: auto;height: 100vh;"/>
         <svg fill="none" height="100%" id="general_plan"
              style="position: absolute;bottom: 0;left: 0;z-index: 90;height: 100vh;margin: auto;" viewBox="0 0 1342 768"
              width="100%"
              xmlns="http://www.w3.org/2000/svg">
             <rect fill="url(#pattern0)" height="896" width="100%"/>
-            <a class="btn-block" @click="openBlock(block)" v-for="(block, index ) in apartments" :key="index"
-               @mouseover="showBlockInfo(block, true)" @mouseleave="showBlockInfo(null,false)"
+            <a :key="index" @click="openBlock(block)" @mouseleave="showBlockInfo(null,false)" @mouseover="showBlockInfo(block, true)"
+               class="btn-block" v-for="(block, index ) in apartments"
                v-html="block.svgElement"
             >
             </a>
@@ -38,15 +38,15 @@
 
     <div class="block-a_modal" id="block-a_modal" v-if="showApartments">
         <div class="big-a-block">
-            <span class="close-a" @click="showApartments = false">&times;</span>
+            <span @click="showApartments = false" class="close-a">&times;</span>
             <h1 align="center">{{ block.name }}</h1>
             <h1 align="center">Выберите квартиру</h1>
             <div class="floors">
-                <div class="floor" v-for="(floor, index) in block.floors" :key="index">
+                <div :key="index" class="floor" v-for="(floor, index) in block.floors">
                     {{ floor.name }}
                     <div class="apartments">
-                        <div class="apartment" v-for="(apartment, index) in floor.apartments" :key="index">
-                            <a href="#" @click="openApartment(apartment, floor)">{{ apartment.roomCount }} квартира </a>
+                        <div :key="index" class="apartment" v-for="(apartment, index) in floor.apartments">
+                            <a @click="openApartment(apartment, floor)" href="#">{{ apartment.roomCount }} квартира </a>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@
     <div class="modal" id="myModal" v-if="showApartment">
         <!-- Modal content -->
         <div class="modal-content">
-            <span class="close" @click="showApartment = false">&times;</span>
+            <span @click="showApartment = false" class="close">&times;</span>
             <div class="plan-popup">
                 <div class="plan-img">
                     <input checked id="tab1" name="tab" type="radio">
@@ -69,19 +69,19 @@
                     <br>
                     <div class="content-container">
                         <div class="content" id="c1" v-viewer.static="{inline: true}">
-                            <img alt="" id="img" :src="apartment.plan" width="300px">
+                            <img :src="apartment.plan" alt="" id="img" width="300px">
                         </div>
                         <div class="content" id="c2" v-viewer.static="{inline: true}">
-                            <img alt="" id="img2" :src="apartment.planWithFurniture" width="300px">
+                            <img :src="apartment.planWithFurniture" alt="" id="img2" width="300px">
                         </div>
                     </div>
                 </div>
                 <div class="form">
-                    <p>Блок: <strong id="general_square">{{ block.name }}</strong></p>
-                    <p>Общая площадь: <strong id="general_square">{{ apartment.generalSquare }}</strong></p>
-                    <p>Жилая площадь: <strong id="live_square">{{ apartment.liveSquare }}</strong></p>
-                    <p>Количество комнат: <strong id="room_count">{{ apartment.roomCount }}</strong></p>
-                    <p>Этаж: <strong id="floor">{{ floor.name }}</strong></p>
+                    <p>Блок: <strong>{{ block.name }}</strong></p>
+                    <p>Общая площадь: <strong>{{ apartment.generalSquare }}</strong></p>
+                    <p>Жилая площадь: <strong>{{ apartment.liveSquare }}</strong></p>
+                    <p>Количество комнат: <strong>{{ apartment.roomCount }}</strong></p>
+                    <p>Этаж: <strong>{{ floor.name }}</strong></p>
                     <p>Статус: <strong>{{ apartment.soldStatus ? 'Продано' : 'Не продано' }}</strong></p>
                 </div>
             </div>
@@ -157,7 +157,6 @@
     }).mount('#app')
 
     app.use(VueViewer.default)
-
 
 
     const box = document.getElementById("box")
