@@ -46,7 +46,7 @@
                     {{ floor.name }}
                     <div class="apartments">
                         <div :key="index" class="apartment" v-for="(apartment, index) in floor.apartments">
-                            <a @click="openApartment(apartment, floor)" href="#">{{ apartment.roomCount }} квартира </a>
+                            <button :class="apartment.soldStatus ? 'disabled': ''" @click="openApartment(apartment, floor)" :disabled="apartment.soldStatus">{{ apartment.roomCount }} квартира </button>
                         </div>
                     </div>
                 </div>
