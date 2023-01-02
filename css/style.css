@@ -14,7 +14,7 @@ body {
 }
 
 .general_plan {
-    background-image: url(./img/general_plans.jpg);
+    background-image: url(../img/general_plans.jpg);
     background-size: contain;
 }
 
@@ -117,12 +117,12 @@ body {
 
 /* Modal Content/Box */
 .modal-content {
+    position: relative;
     background-color: #fefefe;
     margin: 15% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 800px;
-
 }
 
 /* The Close Button */
@@ -132,6 +132,32 @@ body {
     font-size: 28px;
     font-weight: bold;
     margin-right: 10px;
+}
+
+.close-img {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+}
+
+.download {
+    position: absolute;
+    right: 30px;
+    top: 8px;
+    opacity: 0.5;
+}
+
+.download img {
+    width: 16px;
+}
+
+.download:hover,
+.download:focus {
+    opacity: 1;
+}
+
+.apartment-img{
+    width: 80%;
 }
 
 .close:hover,
@@ -228,6 +254,7 @@ body {
 
 .plan-img input#tab1:checked ~ .content-container #c1 {
     opacity: 1;
+    z-index: 999;
 }
 
 .plan-img input#tab2:checked ~ .line {
@@ -236,6 +263,7 @@ body {
 
 .plan-img input#tab2:checked ~ .content-container #c2 {
     opacity: 1;
+    z-index: 999;
 }
 
 .plan-img label {

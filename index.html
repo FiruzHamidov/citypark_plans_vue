@@ -7,8 +7,7 @@
     <meta content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
-    <link href="./style.css" rel="stylesheet">
-    <link href="//unpkg.com/viewerjs/dist/viewer.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
 </head>
 <body>
 <div id="app">
@@ -19,7 +18,8 @@
              width="100%"
              xmlns="http://www.w3.org/2000/svg">
             <rect fill="url(#pattern0)" height="896" width="100%"/>
-            <a :key="index" @click="openBlock(block)" @mouseleave="showBlockInfo(null,false)" @mouseover="showBlockInfo(block, true)"
+            <a :key="index" @click="openBlock(block)" @mouseleave="showBlockInfo(null,false)"
+               @mouseover="showBlockInfo(block, true)"
                class="btn-block" v-for="(block, index ) in apartments"
                v-html="block.svgElement"
             >
@@ -46,7 +46,10 @@
                     {{ floor.name }}
                     <div class="apartments">
                         <div :key="index" class="apartment" v-for="(apartment, index) in floor.apartments">
-                            <button :class="apartment.soldStatus ? 'disabled': ''" @click="openApartment(apartment, floor)" :disabled="apartment.soldStatus">{{ apartment.roomCount }} квартира </button>
+                            <button :class="apartment.soldStatus ? 'disabled': ''"
+                                    :disabled="apartment.soldStatus" @click="openApartment(apartment, floor)">
+                                {{ apartment.roomCount }} квартира
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -54,7 +57,7 @@
         </div>
     </div>
 
-    <!-- The Modal -->
+    <!-- The Plan Modal -->
     <div class="modal" id="myModal" v-if="showApartment">
         <!-- Modal content -->
         <div class="modal-content">
@@ -68,11 +71,15 @@
                     <div class="line"></div>
                     <br>
                     <div class="content-container">
-                        <div class="content" id="c1" v-viewer.static="{inline: true}">
-                            <img :src="apartment.plan" alt="" id="img" width="300px">
+                        <div class="content" id="c1">
+                            <a @click="openApartmentPhoto(apartment.plan)">
+                                <img :src="apartment.plan" alt="" id="img" width="300px">
+                            </a>
                         </div>
-                        <div class="content" id="c2" v-viewer.static="{inline: true}">
-                            <img :src="apartment.planWithFurniture" alt="" id="img2" width="300px">
+                        <div class="content" id="c2">
+                            <a @click="openApartmentPhoto(apartment.planWithFurniture)">
+                                <img :src="apartment.planWithFurniture" alt="" id="img2" width="300px">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -90,22 +97,35 @@
 
     </div>
 
+    <!-- The Plan Photo Modal -->
+    <div class="modal" v-if="showApartmentPhoto">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span @click="showApartmentPhoto = false" class="close close-img">&times;</span>
+            <span class="close download"><a :href="downloadImg" target="_blank"><img alt="Скачать"
+                                                                                        src="./img/download.png"></a></span>
+            <div class="plan-popup">
+                <img :src="downloadImg" alt="" class="apartment-img" width="100%">
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="//unpkg.com/viewerjs/dist/viewer.js"></script>
-<script src="//unpkg.com/v-viewer/dist/v-viewer.js"></script>
-
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://unpkg.com/vue-axios@2.1.4/dist/vue-axios.min.js"></script>
 <script type="module">
 
     const {createApp} = Vue
-    import blocksData from './data/apartments.json' assert {type: "json"}
 
     const app = createApp({
         data() {
             return {
-                apartments: blocksData,
+                apartments: [],
                 blockInfo: {
                     status: false,
                     name: '',
@@ -127,8 +147,15 @@
                 },
                 showApartments: false,
                 showApartment: false,
+                showApartmentPhoto: false,
                 block: [],
+                downloadImg: '',
             }
+        },
+        mounted() {
+            axios
+                .get('./data/apartments.json')
+                .then(response => (this.apartments = response.data))
         },
         methods: {
             showBlockInfo(data, status) {
@@ -146,18 +173,16 @@
             openApartment(apartment, floor) {
                 this.showApartment = true
                 this.showApartments = false
-
                 this.apartment = apartment
                 this.floor = floor
-
-                console.log('info', apartment, floor)
-
+            },
+            openApartmentPhoto(path) {
+                this.showApartment = false
+                this.showApartmentPhoto = true
+                this.downloadImg = path
             }
         }
     }).mount('#app')
-
-    app.use(VueViewer.default)
-
 
     const box = document.getElementById("box")
 
@@ -168,7 +193,6 @@
     }
 
 </script>
-
 </body>
 
 
