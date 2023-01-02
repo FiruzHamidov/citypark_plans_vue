@@ -72,14 +72,16 @@
                     <br>
                     <div class="content-container">
                         <div class="content" id="c1">
-                            <a class="cursor-pointer" @click="openApartmentPhoto(apartment.plan)">
+                            <div class="show-plan-photo" @click="openApartmentPhoto(apartment.plan)">
                                 <img :src="apartment.plan" alt="" id="img" width="300px">
-                            </a>
+                                <a @click="openApartmentPhoto(apartment.plan)" class="show-plan-photo__btn" href="#"><img src="./img/zoom.png" alt=""></a>
+                            </div>
                         </div>
                         <div class="content" id="c2">
-                            <a class="cursor-pointer" @click="openApartmentPhoto(apartment.planWithFurniture)">
+                            <div @click="openApartmentPhoto(apartment.plan)" class="show-plan-photo" @click="openApartmentPhoto(apartment.planWithFurniture)">
                                 <img :src="apartment.planWithFurniture" alt="" id="img2" width="300px">
-                            </a>
+                                <a @click="openApartmentPhoto(apartment.plan)" class="show-plan-photo__btn" href="#"><img src="./img/zoom.png" alt=""></a>
+                            </div>
                         </div>
                     </div>
                 </div>

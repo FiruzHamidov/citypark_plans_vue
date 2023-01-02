@@ -1,11 +1,11 @@
 html, body {
     padding: 0;
     margin: 0;
-    font-family: Arial,serif;
+    font-family: Arial, serif;
 }
 
 body {
-    font-family: Arial,serif;
+    font-family: Arial, serif;
 }
 
 .selled {
@@ -140,6 +140,27 @@ body {
     top: 10px;
 }
 
+.show-plan-photo {
+    position: relative;
+    cursor: pointer;
+}
+
+.show-plan-photo:hover .show-plan-photo__btn {
+    display: flex;
+}
+
+.show-plan-photo__btn {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    align-items: center;
+    justify-content: center;
+    background: rgb(0, 0, 0, 0.5);
+}
+
 .download {
     position: absolute;
     right: 30px;
@@ -156,7 +177,7 @@ body {
     opacity: 1;
 }
 
-.apartment-img{
+.apartment-img {
     width: 80%;
 }
 
@@ -238,6 +259,10 @@ body {
 
 .plan-img img {
     width: 300px !important;
+}
+
+.show-plan-photo__btn img {
+    width: 64px !important;
 }
 
 .plan-img input {
@@ -374,6 +399,7 @@ body {
     .modal-content {
         width: 85%;
     }
+
     .block-a_modal h1 {
         font-size: 26px;
     }
