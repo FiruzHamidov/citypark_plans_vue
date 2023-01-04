@@ -100,6 +100,8 @@ body {
 
 .floor {
     display: flex;
+    align-items: center;
+    margin-bottom: 3px;
 }
 
 /* The Modal (background) */
@@ -257,6 +259,7 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 100;
+    border: 1px solid #000;
 }
 
 .plan-img {
@@ -373,6 +376,43 @@ body {
 .plan-img .content-container .content p,
 .plan-img .content-container .content i {
     font-size: 13px;
+}
+
+.apartments {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(8, 30px);
+    grid-template-rows: 30px;
+    margin-left: 10px
+}
+
+.apartments .apartment {
+    display: flex;
+    justify-content: center;
+    background: #5da25a;
+    color: #fff;
+    cursor: pointer;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+.apartments .apartment:hover {
+    background: #498646;
+}
+
+.apartments .disabled:hover {
+    background: #d74444;
+}
+
+.apartments .disabled {
+    background: #d74444;
+    color: #fff;
+    border: none;
+    cursor: not-allowed;
 }
 
 @media (max-width: 480px) {

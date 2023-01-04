@@ -36,6 +36,14 @@
         </div>
     </div>
 
+    <div class="blockInfo" ref="apartmentInfoRef">
+        <strong> {{ apartmentInfo.roomCount }} - ком квартира</strong>
+        <div>
+            <p>Статус: <strong>{{ apartmentInfo.soldStatus ? 'Продано' : 'Свободно' }}</strong></p>
+            <p>Площадь: <strong>{{ apartmentInfo.generalSquare }}</strong></p>
+        </div>
+    </div>
+
     <div class="block-a_modal" id="block-a_modal" v-if="showApartments">
         <div class="big-a-block">
             <span @click="showApartments = false" class="close-a">&times;</span>
@@ -45,11 +53,14 @@
                 <div :key="index" class="floor" v-for="(floor, index) in block.floors">
                     {{ floor.name }}
                     <div class="apartments">
-                        <div :key="index" class="apartment" v-for="(apartment, index) in floor.apartments">
-                            <button :class="apartment.soldStatus ? 'disabled': ''"
-                                    :disabled="apartment.soldStatus" @click="openApartment(apartment, floor)">
-                                {{ apartment.roomCount }} квартира
-                            </button>
+                        <div :class="apartment.soldStatus ? 'disabled': ''"
+                             :key="index"
+                             @click="openApartment(apartment, floor)"
+                             class="apartment"
+                             v-for="(apartment, index) in floor.apartments"
+                             @mouseleave="showApartmentInfo(null,false)"
+                             @mouseover="showApartmentInfo(apartment, true)">
+                            {{ apartment.roomCount }}
                         </div>
                     </div>
                 </div>
@@ -72,15 +83,17 @@
                     <br>
                     <div class="content-container">
                         <div class="content" id="c1">
-                            <div class="show-plan-photo" @click="openApartmentPhoto(apartment.plan)">
+                            <div @click="openApartmentPhoto(apartment.plan)" class="show-plan-photo">
                                 <img :src="apartment.plan" alt="" id="img" width="300px">
-                                <a @click="openApartmentPhoto(apartment.plan)" class="show-plan-photo__btn" href="#"><img src="./img/zoom.png" alt=""></a>
+                                <a @click="openApartmentPhoto(apartment.plan)" class="show-plan-photo__btn"
+                                   href="#"><img alt="" src="./img/zoom.png"></a>
                             </div>
                         </div>
                         <div class="content" id="c2">
                             <div @click="openApartmentPhoto(apartment.planWithFurniture)" class="show-plan-photo">
                                 <img :src="apartment.planWithFurniture" alt="" id="img2" width="300px">
-                                <a @click="openApartmentPhoto(apartment.planWithFurniture)" class="show-plan-photo__btn" href="#"><img src="./img/zoom.png" alt=""></a>
+                                <a @click="openApartmentPhoto(apartment.planWithFurniture)" class="show-plan-photo__btn"
+                                   href="#"><img alt="" src="./img/zoom.png"></a>
                             </div>
                         </div>
                     </div>
@@ -105,7 +118,7 @@
         <div class="modal-content">
             <span @click="showApartmentPhoto = false" class="close close-img">&times;</span>
             <span class="close download"><a :href="downloadImg" target="_blank"><img alt="Скачать"
-                                                                                        src="./img/download.png"></a></span>
+                                                                                     src="./img/download.png"></a></span>
             <div class="plan-popup">
                 <img :src="downloadImg" alt="" class="apartment-img" width="100%">
             </div>
@@ -135,6 +148,16 @@
                     square: '',
                     apartmentCount: '',
                 },
+                apartmentInfo: {
+                    status: false,
+                    square: '',
+                    plan: '',
+                    planWithFurniture: '',
+                    generalSquare: '',
+                    liveSquare: '',
+                    roomCount: '',
+                    soldStatus: ''
+                },
                 apartment: {
                     square: '',
                     plan: '',
@@ -160,6 +183,14 @@
                 .then(response => (this.apartments = response.data))
         },
         methods: {
+            showApartmentInfo(apartment, status) {
+                let apartmentInfoRef = this.$refs.apartmentInfoRef
+                apartmentInfoRef.style.left = `${event.clientX + 15}px`;
+                apartmentInfoRef.style.top = `${event.clientY + 15}px`;
+                status ? apartmentInfoRef.style.display = 'flex' : apartmentInfoRef.style.display = 'none'
+                status ? this.apartmentInfo = apartment : this.apartmentInfo = {}
+                this.apartmentInfo.status = !this.status;
+            },
             showBlockInfo(data, status) {
                 let blockInfoRef = this.$refs.blockInfo
                 blockInfoRef.style.left = `${event.clientX + 25}px`;
@@ -173,10 +204,13 @@
                 this.block = block
             },
             openApartment(apartment, floor) {
-                this.showApartment = true
-                this.showApartments = false
-                this.apartment = apartment
-                this.floor = floor
+                this.$refs.apartmentInfoRef.style.display = 'none'
+                if (!apartment.soldStatus) {
+                    this.showApartment = true
+                    this.showApartments = false
+                    this.apartment = apartment
+                    this.floor = floor
+                }
             },
             openApartmentPhoto(path) {
                 this.showApartment = false

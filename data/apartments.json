@@ -358,6 +358,83 @@
             "liveSquare": "23,0м2",
             "roomCount": "1",
             "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "54,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "61,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          }
+        ]
+      },
+      {
+        "name": "3",
+        "apartments": [
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "60,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "1",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "59,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "2",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "58,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "3",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "57,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "4",
+            "soldStatus": 1
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "56,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "5",
+            "soldStatus": 0
+          },
+          {
+            "plan": "./img/brunnera/general/Б1-1.jpg",
+            "planWithFurniture": "./img/brunnera/withFurniture/Б1-1.jpg",
+            "generalSquare": "55,10м2",
+            "liveSquare": "23,0м2",
+            "roomCount": "6",
+            "soldStatus": 1
           }
         ]
       }
