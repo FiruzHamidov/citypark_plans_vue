@@ -102,6 +102,7 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 3px;
+    justify-content: center;
 }
 
 /* The Modal (background) */
