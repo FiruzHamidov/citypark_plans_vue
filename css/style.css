@@ -383,7 +383,7 @@ body {
     gap: 10px;
     justify-content: center;
     align-items: center;
-    grid-template-columns: repeat(8, 30px);
+    grid-template-columns: repeat(10, 30px);
     grid-template-rows: 30px;
     margin-left: 10px
 }
