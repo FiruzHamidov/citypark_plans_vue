@@ -20,7 +20,7 @@
             <rect fill="url(#pattern0)" height="896" width="100%"/>
             <a :key="index" @click="openBlock(block)" @mouseleave="showBlockInfo(null,false)"
                @mouseover="showBlockInfo(block, true)"
-               class="btn-block" v-for="(block, index ) in apartments"
+               class="btn-block" v-for="(block, index) in apartments"
                v-html="block.svgElement"
             >
             </a>
@@ -130,9 +130,9 @@
 </div>
 
 
-<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/vue-axios@2.1.4/dist/vue-axios.min.js"></script>
+<script src="./js/vue.global.prod.js"></script>
+<script src="./js/axios.min.js"></script>
+<script src="./js/vue-axios.js"></script>
 <script type="module">
 
     const {createApp} = Vue
@@ -219,6 +219,7 @@
             }
         }
     }).mount('#app')
+
 
     const box = document.getElementById("box")
 
